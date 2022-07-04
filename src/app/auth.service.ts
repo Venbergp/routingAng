@@ -1,12 +1,18 @@
 
 
 export class AuthService{
-  private isLogged : boolean = false
+
+  get isLogged(): boolean {
+    return this._isLogged;
+  }
+  private _isLogged : boolean = false
+
+
 
   isAuth(){
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(this.isLogged)
+        resolve(this._isLogged)
       }, 10)
 
     })
@@ -14,10 +20,10 @@ export class AuthService{
 
 
   login() {
-    this.isLogged = true
+    this._isLogged = true
   }
 
   logout() {
-    this.isLogged = false
+    this._isLogged = false
   }
 }

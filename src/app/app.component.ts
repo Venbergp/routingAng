@@ -10,18 +10,13 @@ import {resolve} from "@angular/compiler-cli";
 export class AppComponent {
   title = 'routingAng';
 
-  logged : boolean = false
-
   constructor(public auth: AuthService) {
   }
 
   changeAuthStatus(status : string) {
-    console.log(this.logged)
     if (status=='login') {
-      this.logged = false
       this.auth.login()
     } else {
-      this.logged = true
       this.auth.logout()
     }
   }
