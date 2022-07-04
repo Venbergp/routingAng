@@ -13,10 +13,15 @@ export class ImageComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
     this.route.params.subscribe((params: Params) => {
       console.log(params)
-      this.src = params["src"]
       this.id = params["id"]
+    })
+
+    this.route.queryParams.subscribe((params: Params) => {
+      console.log(params)
+      this.src = params["src"]
     })
   }
 

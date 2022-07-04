@@ -1,7 +1,12 @@
 <div class="container">
   <ul class="list-group">
     <li class="list-group-item list-group-item-action" *ngFor="let img of imgs">
-      <a [routerLink]="['/image', img.id, img.src]" > Картинка {{img.id}} </a>
+      <a
+        [routerLink]="['/image', img.id]"
+        [queryParams]="{src: img.src}"
+      >
+        Картинка {{img.id}}
+      </a>
     </li>
   </ul>
 </div>
